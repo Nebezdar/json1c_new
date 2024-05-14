@@ -92,8 +92,9 @@ class ComagicVisitors
             $dbn = "SELECT `id` FROM visitors_info 
                     WHERE client_id = :client_id";
             $stn = $this->pdo->prepare($dbn);
-            $stn->execute();
             $stn->bindParam('client_id', $this->response, PDO::PARAM_STR);
+            $stn->execute();
+
             if ($this->response = null)
             {
                 $this->response = "";
