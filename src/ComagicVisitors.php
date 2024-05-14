@@ -42,6 +42,7 @@ class ComagicVisitors
         $this->domainIdentification();
         $this->json1c();
         $this->clientIndentification();
+        $this->droppedCallProcess();
     }
 
     protected function domainIdentification(): void
