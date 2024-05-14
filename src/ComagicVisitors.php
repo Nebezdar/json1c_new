@@ -46,7 +46,7 @@ class ComagicVisitors
 
     protected function domainIdentification(): void
     {
-        switch ($this->json['site_domain_name']) {
+        switch ($this->json['fluid_tag']) {
             case "-#hy-fwtwd-site":
                 $this->suffix = "HY";
                 break;
