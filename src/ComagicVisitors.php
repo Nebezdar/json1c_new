@@ -89,8 +89,8 @@ class ComagicVisitors
     protected function clientIndentification(): void
     {
 
-            $dbn = "SELECT visitor_info FROM `client_id` 
-                    WHERE 'client_id' = :client_id";
+            $dbn = "SELECT `id` FROM visitors_info 
+                    WHERE client_id = :client_id";
             $stn = $this->pdo->prepare($dbn);
             $stn->execute();
             $stn->bindParam('client_id', $this->response, PDO::PARAM_STR);
