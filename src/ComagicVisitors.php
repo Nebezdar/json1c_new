@@ -93,12 +93,13 @@ class ComagicVisitors
                     WHERE client_id = :client_id";
             $stn = $this->pdo->prepare($dbn);
             $stn->bindParam('client_id', $this->response, PDO::PARAM_STR);
+        if ($this->response = null)
+        {
+            $this->response = "";
+        }
             $stn->execute();
 
-            if ($this->response = null)
-            {
-                $this->response = "";
-            }
+
     }
 
     protected function droppedCallProcess(): void
