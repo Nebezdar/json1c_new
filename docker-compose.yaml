@@ -3,13 +3,14 @@ version: "1.0"
 services:
   backend:
     # Specify Image name
-    image: backend
-
+    image: comagic_visitors
+    env_file:
+      - .env
     # Specify Container name
-    container_name: backend
+    container_name: json1c
 
     # specify context and dockerfile to build
-    build: 
+    build:
 
       #Docker context is path where dockerfile is located.
       context: ./
@@ -22,5 +23,5 @@ services:
       - "8080:80"
 
     #persistent volume
-    # volumes: 
+    # volumes:
     #   - ./src:/usr/share/nginx/html/project
