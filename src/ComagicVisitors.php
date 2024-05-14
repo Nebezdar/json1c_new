@@ -88,18 +88,18 @@ class ComagicVisitors
 
     protected function clientIndentification(): void
     {
+        $dbn = "SELECT `id` FROM visitors_info 
+                WHERE client_id = :client_id";
+        $stn = $this->pdo->prepare($dbn);
+        $stn->bindParam('client_id', $this->json['client_id']);
+        $stn->execute();
+        $result = $stn->fetch();
 
-            $dbn = "SELECT `id` FROM visitors_info 
-                    WHERE client_id = :client_id";
-            $stn = $this->pdo->prepare($dbn);
-            $stn->bindParam('client_id', $this->response, PDO::PARAM_STR);
-        if ($this->response = null)
-        {
-            $this->response = "";
+        if (!$result) {
+            $this->response = 0;
+            return;
         }
-            $stn->execute();
-
-
+        $this->response = $result[0];
     }
 
     protected function droppedCallProcess(): void
