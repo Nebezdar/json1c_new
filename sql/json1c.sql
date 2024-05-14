@@ -1,6 +1,6 @@
-CREATE TABLE IF NOT EXISTS `calls_data` (
+CREATE TABLE IF NOT EXISTS `json1c` (
             `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            `client_id` VARCHAR(255) NOT NULL,
+            `client_id` INT NOT NULL,
             `fluid_tag` VARCHAR(255) NOT NULL,
             `client_mail` VARCHAR(255) NOT NULL,
             `client_mail_id` VARCHAR(255) NOT NULL,

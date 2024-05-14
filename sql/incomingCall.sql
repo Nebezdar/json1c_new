@@ -1,4 +1,4 @@
-INSERT INTO `calls_data`
+INSERT INTO `json1c`
 VALUES (
            :id,
            :client_id,
